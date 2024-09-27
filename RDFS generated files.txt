@@ -1,0 +1,161 @@
+APPENDIX A
+The full RDF-S code of the case study.
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdfs:Class rdf:ID="Course">
+    <rdfs:label>Course</rdfs:label>
+    <rdfs:comment>Represents a course offered by the university</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Student">
+    <rdfs:label>Student</rdfs:label>
+    <rdfs:comment>Represents a student enrolled at the university</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Enrollment">
+    <rdfs:label>Enrollment</rdfs:label>
+    <rdfs:comment>Represents the enrollment of a student in a course</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Instructor">
+    <rdfs:label>Instructor</rdfs:label>
+    <rdfs:comment>Represents an instructor teaching a course</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Department">
+    <rdfs:label>Department</rdfs:label>
+    <rdfs:comment>Represents a department within the university</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Prerequisite">
+    <rdfs:label>Prerequisite</rdfs:label>
+    <rdfs:comment>Represents a prerequisite relationship between courses</rdfs:comment>
+  </rdfs:Class>
+  <!-- Properties for Course -->
+  <rdf:Property rdf:ID="courseID">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="courseName">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="credits">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="department">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="#Department"/>
+  </rdf:Property>
+  <!-- Properties for Student -->
+  <rdf:Property rdf:ID="studentID">
+    <rdfs:domain rdf:resource="#Student"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="studentName">
+    <rdfs:domain rdf:resource="#Student"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="email">
+    <rdfs:domain rdf:resource="#Student"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <!-- Properties for Enrollment -->
+  <rdf:Property rdf:ID="enrollmentID">
+    <rdfs:domain rdf:resource="#Enrollment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="grade">
+    <rdfs:domain rdf:resource="#Enrollment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <!-- Properties for Instructor -->
+  <rdf:Property rdf:ID="instructorID">
+    <rdfs:domain rdf:resource="#Instructor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="instructorName">
+    <rdfs:domain rdf:resource="#Instructor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="email">
+    <rdfs:domain rdf:resource="#Instructor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <!-- Properties for Department -->
+  <rdf:Property rdf:ID="departmentID">
+    <rdfs:domain rdf:resource="#Department"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="departmentName">
+    <rdfs:domain rdf:resource="#Department"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <!-- Properties for Prerequisite -->
+  <rdf:Property rdf:ID="prerequisiteID">
+    <rdfs:domain rdf:resource="#Prerequisite"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+</rdf:RDF>
+
+
+APPENDIX B
+The Updated RDF-S Model.
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdfs:Class rdf:ID="Course">
+    <rdfs:label>Course</rdfs:label>
+    <rdfs:comment>Represents a course offered by the university</rdfs:comment>
+  </rdfs:Class>
+  <rdf:Property rdf:ID="courseID">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="courseName">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="credits">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="semester">
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <!-- Other class definitions and properties -->
+</rdf:RDF> 
+
+
+APPENDIX C
+The UML class diagram regenerated in XMI format
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/spec/UML/20090901">
+  <uml:Model xmi:id="model1" name="UniversityCourseManagement">
+    <packagedElement xmi:type="uml:Class" xmi:id="Course" name="Course">
+      <ownedAttribute xmi:id="courseID" name="courseID" type="String"/>
+      <ownedAttribute xmi:id="courseName" name="courseName" type="String"/>
+      <ownedAttribute xmi:id="credits" name="credits" type="Integer"/>
+      <ownedAttribute xmi:id="semester" name="semester" type="String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Student" name="Student">
+      <ownedAttribute xmi:id="studentID" name="studentID" type="String"/>
+      <ownedAttribute xmi:id="studentName" name="studentName" type="String"/>
+      <ownedAttribute xmi:id="email" name="email" type="String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Enrollment" name="Enrollment">
+      <ownedAttribute xmi:id="enrollmentID" name="enrollmentID" type="String"/>
+      <ownedAttribute xmi:id="grade" name="grade" type="String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Instructor" name="Instructor">
+      <ownedAttribute xmi:id="instructorID" name="instructorID" type="String"/>
+      <ownedAttribute xmi:id="instructorName" name="instructorName" type="String"/>
+      <ownedAttribute xmi:id="email" name="email" type="String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Department" name="Department">
+      <ownedAttribute xmi:id="departmentID" name="departmentID" type="String"/>
+      <ownedAttribute xmi:id="departmentName" name="departmentName" type="String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Prerequisite" name="Prerequisite">
+      <ownedAttribute xmi:id="prerequisiteID" name="prerequisiteID" type="String"/>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>
+
+
+
